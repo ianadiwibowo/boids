@@ -13,8 +13,6 @@ const (
 	screenHeight   = 360
 	screenScale    = 2
 	boidCount      = 500
-	viewRadius     = 13
-	adjustmentRate = 0.015
 )
 
 var (

@@ -1,5 +1,7 @@
 # Boids
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/ianadiwibowo/boids)](https://goreportcard.com/report/github.com/ianadiwibowo/boids)
+
 A simulation of birds flocking beautifully in the sky, with goroutines and Ebiten.
 
 ## About Boids
@@ -27,4 +29,5 @@ go run github.com/ianadiwibowo/boids
 ## References
 
 - https://en.wikipedia.org/wiki/Boids
+- https://www.udemy.com/course/multithreading-in-go-lang/
 - https://gamedevelopment.tutsplus.com/tutorials/3-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444
