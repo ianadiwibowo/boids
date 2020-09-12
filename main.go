@@ -3,17 +3,17 @@ package main
 import (
 	"image/color"
 	"log"
-	"math/rand"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 const (
+	screenTitle  = "Pupuruneko Boids Simulation"
 	screenWidth  = 640
 	screenHeight = 360
 	screenScale  = 2
-	screenTitle  = "Pupuruneko Boids Simulation"
 	boidCount    = 500
+	renderDelay  = 5
 )
 
 var (
@@ -38,26 +38,15 @@ func main() {
 	}
 }
 
-func createBoid(id int) {
-	boid := &Boid{
-		id: id,
-		position: Vector{
-			x: rand.Float64() * screenWidth,
-			y: rand.Float64() * screenHeight,
-		},
-		velocity: Vector{
-			x: rand.Float64()*2 - 1.0,
-			y: rand.Float64()*2 - 1.0,
-		},
-	}
-	boids[id] = boid
-	go boid.start()
-}
-
 func updateScreen(screen *ebiten.Image) error {
 	if !ebiten.IsDrawingSkipped() {
-		for boid := range boids {
-			// screen.Set(boid.position, y int, clr color.Color)
+		for _, boid := range boids {
+			screen.Set(int(boid.position.x), int(boid.position.y), green)
+			screen.Set(int(boid.position.x+1), int(boid.position.y), green)
+			screen.Set(int(boid.position.x-1), int(boid.position.y), green)
+			screen.Set(int(boid.position.x), int(boid.position.y-1), green)
+			screen.Set(int(boid.position.x), int(boid.position.y+1), green)
 		}
 	}
+	return nil
 }
