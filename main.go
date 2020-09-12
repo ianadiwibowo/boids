@@ -8,24 +8,35 @@ import (
 )
 
 const (
-	screenTitle  = "Pupuruneko Boids Simulation"
-	screenWidth  = 640
-	screenHeight = 360
-	screenScale  = 2
-	boidCount    = 500
-	renderDelay  = 5
+	screenTitle    = "Pupuruneko Boids Simulation"
+	screenWidth    = 640
+	screenHeight   = 360
+	screenScale    = 2
+	boidCount      = 500
+	viewRadius     = 13
+	adjustmentRate = 0.015
 )
 
 var (
-	green = color.RGBA{10, 255, 50, 255}
-	boids [boidCount]*Boid
+	green    = color.RGBA{10, 255, 50, 255}
+	boids    [boidCount]*Boid
+	boidsMap [screenWidth + 1][screenHeight + 1]int
 )
 
 func main() {
-	for i := 0; i < boidCount; i++ {
-		createBoid(i)
+	// Initialize boids map
+	for i, row := range boidsMap {
+		for j := range row {
+			boidsMap[i][j] = -1
+		}
 	}
 
+	// Initialize boids
+	for i := 0; i < boidCount; i++ {
+		CreateBoid(i)
+	}
+
+	// Render the simulation
 	err := ebiten.Run(
 		updateScreen,
 		screenWidth,

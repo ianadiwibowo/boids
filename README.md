@@ -8,9 +8,7 @@ Boids is an artificial life simulation which mimics the birds flocking behavior.
 
 Boids simulation shows an emergent behavior. Each boid interacts with other individual boids following a set of rules: separation, alignment, and cohesion.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Starling_flock_with_nearby_predator.jpg/872px-Starling_flock_with_nearby_predator.jpg" height="300" alt="Birds Flocking 1">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Sort_sol_pdfnet.jpg" height="300" alt="Birds Flocking 1">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Starling_flock_with_nearby_predator.jpg/872px-Starling_flock_with_nearby_predator.jpg" height="300" alt="Birds Flocking 1"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Sort_sol_pdfnet.jpg" height="300" alt="Birds Flocking 1">
 
 ## Instruction
 
